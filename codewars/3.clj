@@ -22,19 +22,13 @@
               [x y]))
 
 (defn done-or-not [board]
-  (let [correct-rows (->> (filter correct? board)
-                          count
-                          (= 9))
+  (let [correct-rows (every? correct? board)
         correct-columns (->> (take 9 (range))
                              (map #(get-column board %))
-                             (filter correct?)
-                             count
-                             (= 9))
+                             (every? correct?))
         correct-areas (->> (map #(get-area board %) coords)
                            (map flatten)
-                           (filter correct?)
-                           count
-                           (= 9))]
+                           (every? correct?))]
     (if (and
              correct-rows
              correct-columns
