@@ -1,4 +1,4 @@
-; https://www.codewars.com/kata/did-i-finish-my-sudoku/train/clojure
+;; https://www.codewars.com/kata/did-i-finish-my-sudoku/train/clojure
 
 (count (set [5 3 4 6 7 8 9 1 2]))
 (nth [1 2 3 4 5] 3)
